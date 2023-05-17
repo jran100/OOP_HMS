@@ -17,6 +17,41 @@ public class Menu {
 				+ "6. Exit\n"
 				+ ">> ");
 			menuNum = input.nextInt();
+			
+			if(menuNum==1) {
+				addStudent();
+			}
+			else if(menuNum==2) {
+				deleteStudent();
+			}
+			else if(menuNum==3) {
+				editStudent();
+			}
+			else if(menuNum==4) {
+				viewStudent();
+			}
+			else {
+				continue;
+			}
 		}
 	}
+	
+	public static void addStudent() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Student ID: ");
+		int studentId=input.nextInt();
+		
+		System.out.print("Student Name: ");
+		String studentName=input.next();
+		
+		System.out.print("Student Email: ");
+		String studentEmail=input.next();
+		
+		System.out.print("Student PhoneNumber: ");
+		int studentPhone=input.nextInt();
+	}
+	
+	public static void deleteStudent() {}
+	public static void editStudent() {}
+	public static void viewStudent() {}
 }
