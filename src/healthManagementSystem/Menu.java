@@ -1,57 +1,41 @@
 package healthManagementSystem;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
 	public static void main(String[] args) {
-		int menuNum = 0;
 		Scanner input = new Scanner(System.in);
+		StudentManager studentM = new StudentManager(input);
+		int menuNum = 0;
 		
-		while(menuNum != 6) {
+		while(menuNum != 5) {
 			System.out.print(
-				"1. Add\n"
+				"---\n"
+				+"1. Add\n"
 				+ "2. Delete\n"
 				+ "3. Edit\n"
 				+ "4. View\n"
-				+ "5. Show menu\n"
-				+ "6. Exit\n"
+				+ "5. Exit\n"
 				+ ">> ");
 			menuNum = input.nextInt();
 			
 			if(menuNum==1) {
-				addStudent();
+				studentM.addStudent();
 			}
 			else if(menuNum==2) {
-				deleteStudent();
+				studentM.deleteStudent();
 			}
 			else if(menuNum==3) {
-				editStudent();
+				studentM.editStudent();
 			}
 			else if(menuNum==4) {
-				viewStudent();
+				studentM.viewStudent();
 			}
 			else {
 				continue;
 			}
 		}
 	}
-	
-	public static void addStudent() {
-		Scanner input = new Scanner(System.in);
-		System.out.print("Student ID: ");
-		int studentId=input.nextInt();
-		
-		System.out.print("Student Name: ");
-		String studentName=input.next();
-		
-		System.out.print("Student Email: ");
-		String studentEmail=input.next();
-		
-		System.out.print("Student PhoneNumber: ");
-		int studentPhone=input.nextInt();
-	}
-	
-	public static void deleteStudent() {}
-	public static void editStudent() {}
-	public static void viewStudent() {}
+
 }
